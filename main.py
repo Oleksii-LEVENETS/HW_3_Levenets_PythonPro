@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
+# Task-1. Creating Start Page
 @app.get("/start/")
 @app.get("/")
 def start():
@@ -88,8 +89,26 @@ def mean_hw():
 # (use the library https://pypi.org/project/requests/ ) PATH: /space/
 @app.route("/space/")
 def space_num():
-    pass
+    import requests
+    from requests.exceptions import HTTPError
+    import json
+    url = "http://api.open-notify.org/astros.json"
+    response_astros = None
+    try:
+        response_astros = requests.get(url)
+        response_astros.raise_for_status()
+    except HTTPError as http_err_astros:
+        print(f'HTTP error occurred: {http_err_astros}')
+        exit()
+    except Exception as err_astros:
+        print(f'Other error occurred: {err_astros}')
+        exit()
+    r_astros = response_astros.content
+    json_loads = json.loads(r_astros)
+    numbers = json_loads["number"]
+    content = f"At the moment there are {numbers} of astronauts"
+    return render_template("render_file.html", filename="http://api.open-notify.org/astros.json", content=content)
 
 
 if __name__ == '__main__':
-    app.run(port=5002, host="0.0.0.0", debug=True)
+    app.run()

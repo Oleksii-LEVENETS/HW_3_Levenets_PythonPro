@@ -7,18 +7,18 @@
 <body>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <h1>Task-1:</h1>
-<a href="http://127.0.0.1:5002{{ req }}">/requirements/</a>
+<a href="http://127.0.0.1:5000{{ req }}">/requirements/</a>
 <p>Returns the contents of a file with python packages (requirements.txt): PATH: /requirements/
     -- open requirements.txt file and return its contents.</p>
 
 <h1>Task-2:</h1>
-<a href="http://127.0.0.1:5002{{ gen }}?count=100">/generate-users/</a>
+<a href="http://127.0.0.1:5000{{ gen }}?count=100">/generate-users/</a>
 <p>Output 100 randomly generated users (mail + name) For example - 'Dmytro aasdasda@mail.com'
     (you can use - https://pypi.org/project/Faker/ ) PATH: /generate-users/
     + GET parameter, that adjusts the number users (/generate-users/?count=100)</p>
 
 <h1>Task-3:</h1>
-<a href="http://127.0.0.1:5002{{ mean }}">/mean/</a>
+<a href="http://127.0.0.1:5000{{ mean }}">/mean/</a>
 <p>Display average height, average weight (cm, kg) (from the attached file hw.csv)
     PATH: /mean/ PAY ATTENTION TO THE UNITS OF MEASUREMENT</p>
 <form action = "/success" method = "post" enctype="multipart/form-data">
@@ -27,7 +27,7 @@
 </form>
 
 <h1>Task-4:</h1>
-<a href="http://127.0.0.1:5002{{ space }}">/space/</a>
+<a href="http://127.0.0.1:5000{{ space }}">/space/</a>
 <p>Print the number of astronauts at the moment (API source http://api.open-notify.org/astros.json )
     (use the library https://pypi.org/project/requests/ ) PATH: /space/</p>
 
