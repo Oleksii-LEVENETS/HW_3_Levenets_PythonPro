@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ filename }}</title>
+</head>
+<body>
+<h3><a href="http://127.0.0.1:5000">go back to Start Page</a></h3>
+
+<pre>{%- for line in content: %}
+     <a href="http://127.0.0.1:5000/music/tracks/{{ line[0].lower() }}">/tracks/{{ line[0].lower() }}</a>
+{% endfor %}
+</pre>
+
+
+</body>
+</html>

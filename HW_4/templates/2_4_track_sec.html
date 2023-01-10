@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ filename }}</title>
+</head>
+<body>
+<h3><a href="http://127.0.0.1:5000">go back to Start Page</a></h3>
+
+<pre>{%- for line in content: %}
+     Track: {{ line[0] }}, length: {{ line[1] }} sec.
+{% endfor %}
+</pre>
+
+
+</body>
+</html>

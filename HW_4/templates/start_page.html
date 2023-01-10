@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW_3_Levenets_PythonPro_Hillel</title>
+</head>
+<body>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<h3>Task-1.1:</h3>
+<a href="http://127.0.0.1:5000{{ req }}">/requirements/</a>
+<p>Returns the contents of a file with python packages (requirements.txt): PATH: /requirements/
+    -- open requirements.txt file and return its contents.</p>
+
+<h3>Task-1.2:</h3>
+<a href="http://127.0.0.1:5000{{ gen }}?count=100">/generate-users/</a>
+<p>Output 100 randomly generated users (mail + name) For example - 'Dmytro aasdasda@mail.com'
+    (you can use - https://pypi.org/project/Faker/ ) PATH: /generate-users/
+    + GET parameter, that adjusts the number users (/generate-users/?count=100)</p>
+
+<h3>Task-1.3:</h3>
+<a href="http://127.0.0.1:5000{{ mean }}">/mean/</a>
+<p>Display average height, average weight (cm, kg) (from the attached file hw.csv)
+    PATH: /mean/ PAY ATTENTION TO THE UNITS OF MEASUREMENT</p>
+<form action = "/success" method = "post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type = "submit" value="Upload hw.csv">
+</form>
+
+<h3>Task-1.4:</h3>
+<a href="http://127.0.0.1:5000{{ space }}">/space/</a>
+<p>Print the number of astronauts at the moment (API source http://api.open-notify.org/astros.json )
+    (use the library https://pypi.org/project/requests/ ) PATH: /space/</p>
+
+<h3>Task-2.1:</h3>
+<a href="http://127.0.0.1:5000{{ names }}">/names/</a>
+<p>Вью функция должна выводить количество уникальных исполнителей (artist) из таблицы tracks.
+ PATH: /names/</p>
+
+<h3>Task-2.2:</h3>
+<a href="http://127.0.0.1:5000{{ tracks }}">/tracks/</a>
+<p>Вью функция должна выводить количество записей из таблицы tracks.
+ PATH: /tracks/</p>
+
+<h3>Task-2.3:</h3>
+<a href="http://127.0.0.1:5000{{ tracks_genre }}">/tracks/genre/</a>
+<p>Вью функция должна принимать название жанра трека и выводить количество записей этого жанра (genre) из tracks.
+ PATH: "/tracks/genre/" </p>
+
+<h3>Task-2.4:</h3>
+<a href="http://127.0.0.1:5000{{ tracks_s }}">/tracks-sec/</a>
+<p>Вью функция должна выводить все названия треков (title) и соответствующую продолжительность трека
+в секундах(length) из таблицы tracks.  PATH: /tracks-sec/ </p>
+
+<h3>Task-2.5:</h3>
+<a href="http://127.0.0.1:5000{{ tracks_s_stat }}">/tracks-sec/statistics/</a>
+<p>Вью функция должна выводить среднюю продолжительность трека и общую продолжительность всех треков в секундах
+из таблицы tracks. PATH: /tracks-sec/statistics/</p>
+
+</body>
+</html>
